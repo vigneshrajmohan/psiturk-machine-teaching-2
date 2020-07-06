@@ -73,7 +73,7 @@ var StroopExperiment = function() {
 			show_word( stim[0], stim[1] );
 			wordon = new Date().getTime();
 			listening = true;
-			d3.select("#query").html('<p id="prompt">Type "R" for Red, "B" for blue, "G" for green.</p>');
+			d3.select("#query").html('<p id="prompt">Use the arrow keys to move the triangle</p>');
 		}
 	};
 	
@@ -84,17 +84,17 @@ var StroopExperiment = function() {
 			response;
 
 		switch (keyCode) {
-			case 82:
-				// "R"
-				response="red";
+			case 38:
+				response="up";
 				break;
-			case 71:
-				// "G"
-				response="green";
+			case 37:
+				response="left";
 				break;
-			case 66:
-				// "B"
-				response="blue";
+			case 39:
+				response="right";
+				break;
+			case 40:
+				response="down";
 				break;
 			default:
 				response = "";

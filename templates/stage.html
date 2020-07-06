@@ -1,8 +1,28 @@
 <div id="container-exp">
 	<div id="trial">
-		<h1>Respond Quickly!</h1>
-		<p>What color is this word?</p>
-		<div id="stim"></div>
+		<h1>Type the path using arrow keys</h1>
 		<div id="query"></div>
+		<!--image test-->
+		<div id="query">
+			
+			<img src="../static/augmented_taxi/screenshots/curr_state.png?<?php echo rand(5, 9); ?" alt="currimg" width="320" height="240" id="myImage">
+			<script>
+				// var reimg
+				// window.onload=function () {
+				//   reimg=document.getElementById('re')
+				//   setInterval(function () {
+				// 	reimg.src=reimg.src.replace(/\?.*/,function () {
+				// 	  return '?'+new Date()
+				// 	})
+				//   },5000)
+				// }
+				var myImageElement = document.getElementById('myImage');
+				myImageElement.src = '../static/augmented_taxi/screenshots/curr_state.png?rand=' + Math.random();
+				setInterval(function() {
+					var myImageElement = document.getElementById('myImage');
+					myImageElement.src = '../static/augmented_taxi/screenshots/curr_state.png?rand=' + Math.random();
+				}, 1000);
+			</script>
+		</div>
 	</div>
 </div>
