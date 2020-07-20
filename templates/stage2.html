@@ -1,0 +1,36 @@
+<div id="container-exp">
+	<div id="trial">
+		<h1>Which of these behaves like the robot?</h1>
+		<p>Select one.</p>
+
+		<!-- <script>
+			var numRand = Math.floor(Math.random() * 2);
+		</script> -->
+		<div id="query"></div>
+		<!--video 1-->
+		<!-- {% if numRand == 1 %} -->
+		<div id="query"><p id="prompt">
+			<video width="320" height="240" controls="">
+				<source src="../static/videos/trajectory_a.mp4" type="video/mp4"></video>
+			</p>
+
+		</div>
+
+		<!-- {% else %} -->
+		<div id="query"><p id="prompt">
+			<video width="320" height="240" controls="">
+				<source src="../static/videos/trajectory_b.mp4" type="video/mp4"></video>
+			</p>
+		</div>
+		<!-- {% endif %} -->
+		<!--video 3-->
+		<div id="query"><p id="prompt">
+			<video width="320" height="240" controls="">
+				<source src="../static/videos/trajectory_c.mp4" type="video/mp4"></video>
+			</p>
+		</div>
+		<body onload="showRandomNumber();">
+			<div id="myNumber"></div>
+		</body>
+	</div>
+</div>

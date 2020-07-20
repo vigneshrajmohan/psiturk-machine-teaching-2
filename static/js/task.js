@@ -18,6 +18,7 @@ var pages = [
 	"instructions/instruct-3.html",
 	"instructions/instruct-ready.html",
 	"stage.html",
+	"stage2.html",
 	"postquestionnaire.html"
 ];
 
@@ -49,6 +50,7 @@ var StroopExperiment = function() {
 	var wordon, // time word is presented
 	    listening = false;
 
+	var count = 0;
 	// Stimuli for a basic Stroop experiment
 	var stims = [
 			["SHIP", "red", "unrelated"],
@@ -77,6 +79,10 @@ var StroopExperiment = function() {
 		}
 	};
 	
+
+
+
+
 	var response_handler = function(e) {
 		if (!listening) return;
 
@@ -86,15 +92,57 @@ var StroopExperiment = function() {
 		switch (keyCode) {
 			case 38:
 				response="up";
+				count = count + 1;
+
+				// var fs = require('fs');
+				
+				// var move_next = {
+				// 	movenum: count,
+				// 	type: "up",
+				// };
+
+				// var jsonString = JSON.stringify(move_next);
+				// alert(jsonString);
+
+				// fs.writeFile('./current_mov.json', jsonString, err => {
+				// 	if (err) {
+				// 		current_app.logger.info('Error writing file', err);
+				// 	} else {
+				// 		current_app.logger.info('Successfully wrote file');
+				// 	}
+				// });
+
+				break;
+			case 49:
+				// "1"
+				response="1"; //FIX THIS: MAKE IT SO THAT 1,2,3 are valid responses
+				psiTurk.showPage('stage.html');
+
+				break;
+			case 50:
+				// "2"
+				response="2";
+				psiTurk.showPage('stage.html');
+
+				break;
+			case 51:
+				// "3"
+				response="3";
+				psiTurk.showPage('stage.html');
+
 				break;
 			case 37:
+				// "3"
 				response="left";
 				break;
 			case 39:
+				// "3"
 				response="right";
 				break;
 			case 40:
+				// "3"
 				response="down";
+				alert("down");
 				break;
 			default:
 				response = "";
@@ -141,7 +189,7 @@ var StroopExperiment = function() {
 
 	
 	// Load the stage.html snippet into the body of the page
-	psiTurk.showPage('stage.html');
+	psiTurk.showPage('stage2.html');
 
 	// Register the response handler that is defined above to handle any
 	// key down events.
@@ -149,6 +197,8 @@ var StroopExperiment = function() {
 
 	// Start the test
 	next();
+
+	
 };
 
 
